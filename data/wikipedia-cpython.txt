@@ -1,0 +1,15 @@
+CPython is the default, most widely used implementation of the Python programming language. It is written in C. CPython is a source code interpreter. It has a foreign function interface with several languages including C, in which one must explicitly write bindings in a language other than Python.
+
+Contents  [hide] 
+1	Alternatives
+2	Concurrency issues
+3	Supported platforms
+3.1	Previously supported platforms
+3.2	External ports
+4	Version history
+5	References
+Alternatives[edit]
+CPython is one of several "production-quality" Python implementations including: Jython, written in Java for the JVM, PyPy, written in RPython and translated into C, and IronPython, which is written in C# for the Common Language Infrastructure. There are also several experimental implementations.[1]
+
+Concurrency issues[edit]
+A significant drawback to using CPython is the presence of a Global Interpreter Lock on each CPython interpreter process, which effectively disables concurrent Python threads within one process.[2] To be truly concurrent in multitasking environment, separate CPython interpreter processes have to be run, which makes establishing communication between them a difficult task, though the multiprocessing module mitigates this somewhat. A lot of discussion took place whether to remove the GIL from CPython, even after the rejection of the “free threading” patches on CPython from Greg Stein which effectively replaced GIL with fine-grained locking. The rejection was mainly based on the overhead the patch inflicted to execution of single process code.[3]

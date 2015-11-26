@@ -1,0 +1,66 @@
+From Wikipedia, the free encyclopedia
+Not to be confused with PyPI, the Python official third-party software repository.
+PyPy
+Official PyPy logo
+Stable release	4.0.0 / 29 October 2015; 27 days ago
+Written in	RPython
+Operating system	Cross-platform
+Type	Python interpreter and compiler toolchain
+License	MIT License
+Website	pypy.org
+PyPy is a Python interpreter and just-in-time compiler. PyPy focuses on speed, efficiency and compatibility with the original CPython interpreter.[1]
+
+PyPy started out being a Python interpreter written in the Python language itself. Current PyPy versions are translated from RPython to C code and compiled. The PyPy JIT (short for "Just In Time") compiler is capable of turning Python code into machine code at run time.
+
+Contents  [hide] 
+1	Details and motivation
+1.1	RPython
+2	Project status
+2.1	History
+2.2	Funding
+2.3	Projects using PyPy's toolchain
+3	See also
+4	Notes
+5	References
+6	External links
+Details and motivation[edit]
+PyPy was conceived to be an implementation of Python written in a programming language that is similar to Python. This makes it easy to identify areas where it can be improved and makes PyPy more flexible and easier to experiment with than CPython.[citation needed]
+
+PyPy aims to provide a common translation and support framework for producing implementations of dynamic languages, emphasizing a clean separation between language specification and implementation aspects. It also aims to provide a compliant, flexible and fast implementation of the Python programming language using the above framework to enable new advanced features without having to encode low level details into it.[1][2]
+
+RPython[edit]
+The PyPy interpreter itself is written in a restricted subset of Python, called RPython (Restricted Python).[3] The self-hosting nature of PyPy is reflected in the project's logo, which depicts a snake swallowing its own tail in an ouroboros. RPython puts some constraints on the Python language thus a variable's type can be inferred at compile time.[4]
+
+The PyPy project has developed a tool chain that analyzes RPython code and translates it into C code, which is then compiled to produce a native interpreter. It also allows for pluggable garbage collectors as well as optionally enabling Stackless Python features. Finally, it includes a just-in-time (JIT) generator which builds a just-in-time compiler into the interpreter, given a few annotations in the interpreter source code. The generated JIT compiler is a tracing JIT.[5]
+
+RPython is now also used to write non-Python language implementation such as Pixie.[6]
+
+Project status[edit]
+The latest stable PyPy release, PyPy 4.0.0, is CPython 2.7.10 compatible.[7] PyPy3, released starting with version 2.3.1, is CPython 3.2.5 compatible.[8] Both versions have JIT compilation support on 32-bit/64-bit x86 and ARM processors.[9] It's tested nightly on Windows, Linux, OpenBSD and Mac OS X. PyPy is able to run pure Python software that does not rely on implementation-specific features.[10]
+
+There is a compatibility layer for CPython C API extensions called CPyExt, but it is incomplete and experimental. The preferred way of interfacing with C shared libraries is through the built-in CFFI or ctypes libraries.
+
+History[edit]
+PyPy is a followup to the Psyco project, a just-in-time specializing compiler for Python, developed by Armin Rigo between 2002 and 2010. PyPy's aim is to have a just-in-time specializing compiler with scope, which was not available for Psyco.[clarification needed] Initially, the RPython could also be compiled into Java bytecode, CIL and JavaScript, but these backends were removed due to lack of interest.
+
+PyPy was initially a research and development-oriented project. Reaching a mature state of development and an official 1.0 release in mid-2007, its next focus was on releasing a production-ready version with more CPython compatibility. Many of PyPy's changes have been made during coding sprints.
+
+As of late 2008, PyPy was able to run some popular Python libraries like Pylons,[11] Pyglet,[12] Nevow[13] and Django.[14]
+
+In March 2010, PyPy 1.2 was released, focusing on speed. It included a working just-in-time compiler, but was not advised to be run in production environments. Along with the 1.2 release, the website was redesigned and a new PyPy speed center for tracking progress was brought up.[15]
+
+In April 2011, PyPy version 1.5 was released, which reached compatibility with CPython 2.7.
+
+On May 9, 2013, PyPy 2.0 was released, which introduced alpha-quality support for JIT compilation on ARMv6 and ARMv7 JIT, and included CFFI in the standard library.[9]
+
+On June 20, 2014, PyPy3 is declared stable[8] and brings compatibility with more modern implementations of the Python language. It is released alongside PyPy 2.3.1 and bears the same version number.
+
+Funding[edit]
+PyPy was funded by the European Union being a Specific Targeted Research Project[16] between December 2004 and March 2007. In June 2008, PyPy announced funding being part of the Google Open Source programs, and has agreed to focus on making PyPy more compatible with CPython. In 2009 Eurostars, a European Union funding agency specially focused on SMEs,[17] accepted a proposal from PyPy project members entitled: "PYJIT - a fast and flexible toolkit for dynamic programming languages based on PyPy". Eurostars funding lasted until August 2011.[18] At PyCon US 2011, the Python Software Foundation provided a $10,000 grant for PyPy to continue work on performance and compatibility with newer versions of the language.[19] The port to ARM architecture was sponsored in part by the Raspberry Pi Foundation.[9]
+
+The PyPy project also accepts donations through its status blog pages.[20] There are three funding projects currently in progress: Python 3 version compatibility, built-in optimized NumPy support for numerical calculations and software transactional memory support to allow better parallelism.[9]
+
+Projects using PyPy's toolchain[edit]
+Topaz - an implementation of the Ruby programming language
+HippyVM - an implementation of the PHP language using PyPy technology.
+
